@@ -1,0 +1,20 @@
+---
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("posts");
+
+import Layout from '../layouts/Layout.astro';
+import Main from '../components/Main.astro';
+import H1 from '../components/H1.astro';
+import PostList from "../components/PostList.astro";
+---
+
+<Layout title="Blog | Data Science Portfolio">
+	<Main>
+		<H1 text='James Band Blog'/>
+        <PostList posts = {posts} />
+        <!-- {posts.map((post) => (
+            <PostList posts = {posts} />
+        )) -->
+	</Main>
+</Layout>
